@@ -1,0 +1,425 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Light Color */
+  --primary-color:  #FE5E49;
+  --secondary-color: #ACACAC;
+  --background-color: #FEFEFF;
+  --background-input: #F0F0F0;
+  --text-color: #202429;
+  --input-color: #ACACAC;
+
+  --nav-color: #f8f9fa;
+
+  /* Transisi */
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+
+
+/* Loading Screen */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#loading-screen.fade-out {
+  animation: fadeOut 3s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--tran-05);
+}
+
+
+body.dark {
+  /* Dark Color */
+  --primary-color: #EF4138;
+  --secondary-color: #1A1927;
+  --background-color: #090717;
+  --background-input: #1A1927;
+  --text-color: #DFE3E6;
+  --input-color: #ACACAC;
+
+  --nav-color: #1A1927;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Dark Mode Button */
+.dark-mode-auth {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 25px;
+}
+.dark-mode button,
+.dark-mode-auth button {
+  background-color: transparent;
+  border: 1px solid var(--text-color);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+}
+.dark-mode button:hover,
+.dark-mode-auth button:hover {
+  background-color: var(--background-input);
+  border-color: var(--primary-color);
+  transition: var(--tran-03);
+  color: var(--primary-color);
+}
+.dark-mode button:hover i,
+.dark-mode-auth button:hover i {
+  color: var(--primary-color);
+  transition: var(--tran-03);
+}
+.dark-mode button i,
+.dark-mode-auth button i {
+  color: var(--text-color);
+  padding: 10px;
+}
+/* Dark Mode Button End */
+
+
+
+/* Colors */
+a {
+  color: var(--primary-color) !important;
+}
+
+.primary-color {
+  color: var(--primary-color) !important;
+}
+.text-color,
+label {
+  color: var(--text-color);
+}
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+.bg-color {
+  background-color: var(--background-color) !important;
+}
+.bg-secondary {
+  background-color: var(--secondary-color) !important;
+}
+.border-primary {
+  border-color: var(--primary-color) !important;
+}
+.bg-modal {
+  background-color: var(--nav-color) !important;
+}
+.btn-close {
+  border-color: var(--text-color) !important;
+}
+/* Colors End */
+
+
+
+/* Text Size */
+h1 {
+  font-size: clamp(30px, 2.5vw, 35px);
+}
+h2 {
+  font-size: clamp(25px, 2.5vw, 30px);
+}
+h3 {
+  font-size: clamp(20px, 2.5vw, 25px);
+}
+h4 {
+  font-size: clamp(17px, 2.5vw, 20px);
+}
+h5 {
+  font-size: clamp(15px, 2.5vw, 17px);
+}
+h6, a, span, p {
+  font-size: clamp(13px, 2.5vw, 15px);
+}
+/* Text Size End */
+
+
+
+/* Auth */
+.pass-logo {
+  position: absolute;
+  height: 35px;
+  width: 38px;
+  background: transparent;
+  line-height: 60px;
+  font-size: 20px;
+  text-align: center;
+  padding-left: 15px;
+  z-index: 999;
+}
+.content .pass-logo i.bx,
+.showPass {
+  color: var(--input-color);
+  position: relative;
+}
+.content input {
+  height: 100%;
+  width: 100%;
+  border: 1px solid var(--background-input);
+  color: var(--text-color);
+  border-radius: 10px;
+  padding: 15px 10px 15px 45px;
+  outline: none;
+  background: var(--background-input);
+}
+.content input::placeholder {
+  color: var(--input-color);
+}
+input.form-control:focus,
+input.form-control:-webkit-autofill {
+  box-shadow: none;
+  border-color: var(--primary-color) !important;
+  background: var(--background-input) !important;
+  color: var(--text-color) !important;
+}
+
+.btn {
+  border-radius: 10px !important;
+  padding: 10px 5px;
+}
+.btn-login-with-google {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+.btn-login-with-google:hover {
+  background-color: var(--background-input) !important;
+  border-color: var(--primary-color) !important;
+  transition: var(--tran-05);
+}
+/* Auth End */
+
+
+
+/* Navbar */
+.navbar {
+  background-color: var(--nav-color);
+}
+.navbar .logo-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.navbar .logo-nav img {
+  width: 60px;
+}
+.navbar .profile-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+.navbar .profile-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.navbar-nav .nav-item a {
+  color: var(--text-color) !important;
+}
+/* Navbar End */
+
+
+
+/* Edit Akun */
+.container-edit-akun .card {
+  background-color: var(--background-input) !important;
+  border: none;
+  border-radius: 10px;
+}
+.container-edit-akun .card .profile .foto-profile {
+  width: 100px;
+  height: 100px;
+}
+.container-edit-akun .card .foto-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50px;
+}
+.container-edit-akun .card .profile-details table tr td {
+  background-color: transparent;
+  color: var(--text-color);
+  border: none;
+  padding: 3px;
+}
+
+.container-edit-akun .edit-profile,
+.container-edit-akun .logout {
+  background-color: var(--background-input);
+  border: none;
+  border-radius: 10px;
+  padding: 0px 20px;
+  cursor: pointer;
+}
+.container-edit-akun .logout i,
+.container-edit-akun .logout h5 {
+  color: #dc3545 !important;
+  background-color: transparent !important;
+}
+.container-edit-akun .edit-profile:hover i,
+.container-edit-akun .edit-profile:hover h5,
+.container-edit-akun .history:hover h5 {
+  color: var(--primary-color);
+  transition: var(--tran-03);
+}
+.container-edit-akun .logout:hover,
+.container-edit-akun .logout:hover i,
+.container-edit-akun .logout:hover h5 {
+  background-color: #dc3545;
+  color: #DFE3E6 !important;
+  transition: var(--tran-03);
+}
+
+.modal .modal-content {
+  background-color: var(--nav-color);
+  color: var(--text-color);
+  border: none;
+}
+.modal .modal-content .modal-body input {
+  border: 1px solid var(--input-color);
+  background-color: transparent;
+  color: var(--text-color);
+  border-radius: 10px;
+}
+.modal .modal-content .modal-body input.is-invalid {
+  border-color: #dc3545 !important;
+}
+.modal .modal-content .modal-body input::placeholder {
+  color: var(--text-color);
+}
+.modal .modal-content .modal-body input:focus {
+  border-color: var(--primary-color);
+  box-shadow: none;
+}
+
+.modal .modal-content .modal-body .edit-banner {
+  aspect-ratio: 16/6;
+  overflow: hidden;
+}
+.modal .modal-content .modal-body .edit-banner img {
+  width: 100%;
+  height: 100%;
+}
+
+.modal .modal-content .modal-body .profile .foto-profile {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.modal .modal-content .modal-body .profile .foto-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal .modal-content .reset-btn {
+  display: flex;
+  position: absolute;
+  justify-content: end;
+  padding: 0px;
+  margin: 0px;
+  top: 80px;
+  right: 16px;
+  z-index: 2;
+}
+.modal .modal-content .reset-btn button {
+  padding: 5px 20px !important;
+  background-color: rgba(225,225,225,0.3);
+  color: var(--text-color);
+  border: none;
+}
+.modal .modal-content .reset-btn button:hover {
+  background-color: var(--primary-color);
+  transition: var(--tran-03);
+}
+@media (max-width: 450px) {
+  .modal .modal-content .reset-btn {
+    top: 70px;
+  }
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  background-color: var(--secondary-color);
+}
+input[type="file"]:hover::-webkit-file-upload-button {
+  background-color: var(--primary-color) !important;
+  transition: var(--tran-03);
+}
+input[type="file"]::-webkit-file-upload-button {
+  color: var(--text-color);
+}
+/* Edit Akun End */
+
+
+
+/* Toasts */
+.toast {
+  animation: fadeInOut 1s ease-in-out;
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toast.show {
+  width: 400px;
+  height: max-content;
+  position: fixed;
+  top: 95px;
+  right: 0;
+  padding: 5px;
+  background-color: var(--nav-color);
+  display: block;
+}
+.toast .toast-body {
+  border-radius: 0px 0px 10px 10px;
+}
+
+@media (max-width: 768px) {
+  .toast.show {
+    width: 100% !important;
+    position: fixed;
+    top: 85px;
+  }
+}
+/* Toasts End */
