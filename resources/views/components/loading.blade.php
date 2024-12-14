@@ -2,7 +2,7 @@
     <div class="container d-flex flex-column align-items-center justify-content-center h-100">
         <img src="{{ url('assets/images/logo.png') }}" alt="Superior Auth Logo" style="width: 80px; height: auto; border-radius: 10%;">
         <h1 class="fw-bold primary-color mt-3">Superior <b class="fw-bold text-color">Auth</b></h1>
-        <p class="fw-normal text-color text-center mt-2">Making Authentication Easier and Faster!</p>
+        <p class="fw-normal text-color text-center mt-2">Making Authentication Easier and Faster 🚀</p>
     </div>
 </div>
 

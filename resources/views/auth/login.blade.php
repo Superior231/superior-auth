@@ -1,15 +1,15 @@
 @extends('layouts.auth', ['active' => 'Login - Superior Auth'])
 
 @section('content')
-    <div class="row row-cols-1 justify-content-center mx-0 w-100" style="height: 100svh">
+    <div class="row row-cols-1 justify-content-center align-items-center mx-0 w-100" style="height: 100svh">
         <div class="col col-12 col-md-6 col-lg-4 mx-0 d-flex flex-column align-items-center">
-            <div class="d-flex flex-column align-items-center pt-5 mt-5">
+            <div class="d-flex flex-column align-items-center">
                 <img src="{{ url('assets/images/logo.png') }}" alt="Superior Auth Logo" style="width: 80px; border-radius: 10%;">
                 <h1 class="fw-bold text-color mt-3">Welcome!</h1>
                 <h3 class="primary-color fw-bold">Login</h3>
             </div>
 
-            <form method="POST" action="{{ route('login') }}" class="auth mt-5 w-100">
+            <form method="POST" action="{{ route('login') }}" class="auth mt-4 w-100">
                 @csrf
         
                 <div class="content mb-3">
@@ -44,6 +44,11 @@
                 </div>
                 <div class="d-grid gap-2 mt-4">
                     <button class="btn btn-primary d-block fw-semibold w-100" type="submit">Login</button>
+                    <span class="fw-semibold text-center py-0 my-0">or</span>
+                    <a href="{{ route('google.redirect') }}" class="btn btn-login-with-google fw-semibold w-100">
+                        <img src="{{ url('assets/images/google-icon.png') }}" style="width: 20px;" alt="Google Icon">
+                        Login with Google
+                    </a>
                 </div>
                 <p class="mb-0 mt-2 text-color text-center">
                     Not registered yet?

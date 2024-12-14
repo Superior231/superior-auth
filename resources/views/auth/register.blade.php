@@ -1,9 +1,9 @@
 @extends('layouts.auth', ['active' => 'Sign up - Superior Auth'])
 
 @section('content')
-    <div class="row row-cols-1 justify-content-center mx-0 w-100" style="height: 100svh">
+    <div class="row row-cols-1 justify-content-center align-items-center mx-0 w-100" style="height: 100svh">
         <div class="col col-12 col-md-6 col-lg-4 mx-0 d-flex flex-column align-items-center">
-            <div class="d-flex flex-column align-items-center pt-5 mt-5">
+            <div class="d-flex flex-column align-items-center">
                 <img src="{{ url('assets/images/logo.png') }}" alt="Superior Auth Logo" style="width: 80px; border-radius: 10%;">
                 <h3 class="text-color fw-bold mt-3">Sign up</h3>
             </div>
@@ -69,6 +69,11 @@
 
                 <div class="d-grid gap-2 mt-4">
                     <button class="btn btn-primary d-block fw-semibold w-100" type="submit">Sign up</button>
+                    <span class="fw-semibold text-center py-0 my-0">or</span>
+                    <a href="{{ route('google.redirect') }}" class="btn btn-login-with-google fw-semibold w-100">
+                        <img src="{{ url('assets/images/google-icon.png') }}" style="width: 20px;" alt="Google Icon">
+                        Sign up with Google
+                    </a>
                 </div>
                 <p class="mb-0 mt-2 text-color text-center">
                     Have an account?
