@@ -28,7 +28,6 @@ class HomeController extends Controller
     {
         return view('pages.index', [
             'title' => 'Home - Superior Auth',
-            'active' => 'home',
         ]);
     }
 

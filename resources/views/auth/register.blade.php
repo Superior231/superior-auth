@@ -1,4 +1,4 @@
-@extends('layouts.auth', ['active' => 'Sign up - Superior Auth'])
+@extends('layouts.auth', ['title' => 'Sign up - Superior Auth'])
 
 @section('content')
     <div class="row row-cols-1 justify-content-center align-items-center mx-0 w-100" style="height: 100svh">
