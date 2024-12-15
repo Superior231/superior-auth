@@ -28,20 +28,18 @@ darkModeToggle.addEventListener('click', () => {
 // Navbar
 try {
     const navbar = document.querySelector(".navbar");
-    const navbar2 = document.querySelector(".navbar-detail");
     const classList = ["shadow-sm", "border-bottom", "border-secondary", "bg-navbar"];
 
-    if (navbar || navbar2) {
+    if (navbar) {
         const handleScroll = () => {
             const action = window.pageYOffset > 0.1 ? 'add' : 'remove';
             if (navbar) navbar.classList[action](...classList);
-            if (navbar2) navbar2.classList[action](...classList);
         };
 
         window.addEventListener("scroll", handleScroll);
     }
 } catch (error) {
-    console.log("Fitur navbar tidak ditemukan!");
+    console.log("Navbar feature not found!");
 }
 // Navbar End
 

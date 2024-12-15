@@ -39,4 +39,12 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
         $this->middleware('auth')->only('logout');
     }
+
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->status === 'banned') {
+            Auth::logout();
+            return redirect('/login')->with('error', 'Your account has been banned!');
+        }
+    }
 }

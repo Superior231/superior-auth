@@ -50,6 +50,17 @@
                     </a>
                 </div>
 
+                @if (Auth::user()->roles == 'admin')
+                    <div class="edit-profile py-4">
+                        <a href="{{ route('admin.index') }}" class="row d-flex justify-content-between text-decoration-none">
+                            <div class="col d-flex align-items-center gap-3">
+                                <i class='bx bxs-dashboard text-color fs-2 icon'></i>
+                                <h5 class="text-color py-0 my-0">Dashboard</h5>
+                            </div>
+                        </a>
+                    </div>
+                @endif
+
                 <a id="logout-confirmation" href="{{ route('logout') }}" class="logout text-decoration-none py-4"
                     onclick="event.preventDefault(); logout();">
                     <div class="row d-flex justify-content-between">
@@ -101,7 +112,7 @@
                                 @endif
                             </div>
                         </figure>
-                        <label for="upload-foto" class="mb-2">Upload foto (jpg, jpeg, png, dan webp)</label>
+                        <label for="upload-foto" class="mb-2">Upload foto (jpg, jpeg, png, and webp)</label>
                         <input type="file" class="form-control" name="avatar" id="upload-foto"
                             accept=".jpg, .jpeg, .png, .webp">
 
@@ -113,6 +124,10 @@
                         </div>
                         <input type="text" class="form-control text-color" name="name" id="edit-username"
                             placeholder="Enter username" value="{{ Auth::user()->name }}" autocomplete="off" required>
+
+                        <label for="edit-password" class="mb-2 mt-3">Change password</label>
+                        <input type="password" class="form-control text-color" name="password" id="edit-password"
+                            placeholder="Enter new password" autocomplete="off">
                     </div>
 
                     <div class="modal-footer border-0">

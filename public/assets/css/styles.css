@@ -303,8 +303,8 @@ input.form-control:-webkit-autofill {
 }
 .modal .modal-content .modal-body input {
   border: 1px solid var(--input-color);
-  background-color: transparent;
-  color: var(--text-color);
+  background-color: var(--background-input) !important;
+  color: var(--text-color) !important;
   border-radius: 10px;
 }
 .modal .modal-content .modal-body input.is-invalid {
@@ -376,6 +376,168 @@ input[type="file"]::-webkit-file-upload-button {
   color: var(--text-color);
 }
 /* Edit Akun End */
+
+
+
+/* Dashboard */
+.container-dashboard .card {
+  border: none !important;
+  background-color: var(--background-input) !important;
+}
+.container-dashboard .card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10% !important;
+}
+.container-dashboard .card-body .card-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.container-dashboard .card-info .icon {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50%;
+}
+.container-dashboard .card-body .action {
+  display: flex;
+  align-items: center;
+}
+/* Dashboard End */
+
+
+
+/* Table */
+.container-dashboard .table-responsive {
+  background-color: var(--background-input);
+  border-radius: 10px;
+  padding: 20px;
+}
+.container-dashboard table {
+  border: none !important;
+}
+.container-dashboard table th {
+  background-color: transparent !important;
+  color: var(--primary-color) !important;
+  padding: 10px 20px !important;
+}
+.container-dashboard table td {
+  background-color: transparent !important;
+  color: var(--text-color) !important;
+  border-bottom: 1px solid var(--text-color) !important;
+  padding: 10px 20px !important;
+  border-color: var(--input-color) !important;
+}
+.container-dashboard table tr:hover td {
+  background-color: rgba(225, 225, 225, 0.1) !important;
+  transition: var(--tran-03);
+}
+
+.container-dashboard table tr td a i,
+.container-dashboard table tr td form button.hapus-btn i {
+  padding: 10px;
+  border-radius: 10px;
+}
+.container-dashboard table tr td form button.hapus-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.container-dashboard table tr td .actions a i {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+.container-dashboard table tr td button.hapus-btn i {
+  background-color: #dc35461c;
+}
+
+.container-dashboard table tbody tr td .username .username-info,
+.container-dashboard table tbody tr td .roles-info,
+.container-dashboard table tbody tr td .email-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+}
+.container-dashboard table tbody tr td .actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.container-dashboard table tbody tr td .roles-info,
+.container-dashboard table tbody tr td .email-info,
+.container-dashboard table tbody tr td .actions {
+  height: 30px;
+}
+.container-dashboard table tbody tr td .avatar {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.container-dashboard table tbody tr td .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dataTables_length,
+.dataTables_filter {
+  padding: 10px 0px 10px 0px;
+}
+.dataTables_length select,
+.dataTables_filter select,
+.dataTables_info select,
+.dataTables_paginate select {
+  background-color: var(--background-color) !important;
+  border: none;
+  border-radius: 20px;
+  color: var(--text-color);
+}
+.dataTables_length select  {
+  padding-left: 15px;
+  padding-right: 20px;
+}
+input[type="search"],
+input[type="number"] {
+  background-color: var(--background-color) !important;
+  border: none;
+  border-radius: 20px;
+  color: var(--text-color);
+  padding-left: 15px;
+}
+input[type="search"]:focus,
+input[type="number"]:focus {
+  background-color: var(--background-color) !important;
+}
+input::placeholder {
+  color: var(--input-color) !important;
+}
+input:focus {
+  border-color: var(--primary-color);
+}
+.dataTables_info,
+.pagination {
+  margin-top: 20px !important;
+}
+@media (max-width: 768px) {
+  .dataTables_info,
+  .pagination {
+    margin-top: 5px !important;
+  }
+}
+
+select {
+  background-color: var(--background-input) !important;
+  color: var(--text-color)  !important;
+  border-color: var(--input-color) !important;
+  border-radius: 10px !important;
+}
+/* Table End */
 
 
 

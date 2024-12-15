@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -59,6 +60,15 @@ class HomeController extends Controller
         $user->name = $request->input('name', $user->name);
         $user->email = $request->input('email', $user->email);
         $user->avatar = $request->input('avatar', $user->avatar);
+
+        if ($request->filled('password')) {
+            $validatedData = $request->validate([
+                'password' => 'string|min:8',
+            ]);
+            $user->password = Hash::make($validatedData['password']);
+        } else {
+            $user->password = $user->getOriginal('password');
+        }
 
         if ($request->hasFile('avatar')) {
             // Hapus avatar lama jika ada
