@@ -13,6 +13,7 @@
         @include('components.toast')
         @yield('content')
     </div>
+    @include('components.footer')
     @include('components.script')
 
     <script>
