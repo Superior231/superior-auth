@@ -1,66 +1,92 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Superior Auth
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Superior Auth** adalah sistem registrasi penggua berbasis web yang memungkinkan pengguna untuk mendaftar, masuk, dan logout. Superior Auth memiliki dua metode autentikasi, yaitu melalui registrasi konvensional (menggunakan email dan password) dan autentikasi  menggunakan akun Google. Fitur ini dirancang untuk memberikan pengalaman pengguna yang lebih mudah dan fleksibel dalam proses autentikasi.
 
-## About Laravel
+Fitur utama Superior Auth:
+1. Autentikasi standar (menggunakan email dan password).
+2. Autentikasi menggunakan akun Google.
+3. Logout
+4. Validasi data
+Validasi data pada saat login dan register seperti email atau password salah, email sudah digunakan, password tidak cocok, username terlalu panjang, dan pengecekan status user (approved atau banned). Jika user memiliki status banned maka user tidak bisa login.
+5. Personalisasi profil
+Pengguna dapat memperbarui informasi pribadi, termasuk mengganti avatar.
+6. Dashboard Admin
+Admin dapat mengelola akun pengguna seperti ubah avatar, username, email, password, dan banned user.
+7. Keamanan Login dan Middleware:
+Sistem dilengkapi dengan teknologi keamanan password hashing yang canggih, sehingga setiap data sensitif yang dimasukkan oleh pengguna terlindungi dengan baik. Selain itu, penggunaan middleware memastikan bahwa akses ke setiap halaman dalam aplikasi terbatas sesuai dengan peran dan hak akses pengguna. Dengan langkah-langkah keamanan ini, Superior Auth menjaga kerahasiaan data dan melindungi sistem dari potensi ancaman.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Requirements
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- [Laravel 11](https://laravel.com/docs/11.x)
+- [Composer](https://getcomposer.org/)
+- [PHP 8.3](https://www.php.net/)
+- [XAMPP](https://www.apachefriends.org/download.html)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Libraries
 
-## Learning Laravel
+- [Laravel UI](https://github.com/laravel/ui)
+- [Laravel Socialite](https://laravel.com/docs/11.x/socialite)
+- [SweetAlert2](https://sweetalert2.github.io/)
+- [Bootstrap](https://getbootstrap.com/)
+- [DataTables](https://datatables.net/)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## API
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- [Google OAuth 2.0](https://developers.google.com/identity/protocols/oauth2)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Installation
 
-## Laravel Sponsors
+Clone the repository by running the following command:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```shell
+git clone https://github.com/Superior231/superior-auth.git
+cd superior-auth
+```
 
-### Premium Partners
+Install Dependency:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+```shell
+composer install
+```
 
-## Contributing
+Set Environment Variables:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```shell
+cp .env.example .env
+```
 
-## Code of Conduct
+Generate Application Key:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```shell
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+Database Configuration `.env`:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```shell
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=superior_auth
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## License
+```shell
+php artisan migrate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### How to use Google OAuth with Laravel Socialite?
+
+Anda dapat mengunjungi artikel ini untuk mengetahui bagaimana cara menggunakan Google OAuth di Laravel Socialite
+[Cara Membuat Login with Google Menggunakan Laravel Socialite di Laravel 11](https://blog.hikmal-falah.com/detail/cara-membuat-login-with-google-menggunakan-laravel-socialite-di-laravel-11)
+
+## Usage
+
+Run Application:
+
+```shell
+php artisan serve
+```
+
+Server is running. Open url `http://127.0.0.1:8000` in browser.
