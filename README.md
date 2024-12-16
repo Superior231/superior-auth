@@ -76,6 +76,10 @@ DB_PASSWORD=
 php artisan migrate
 ```
 
+```shell
+php artisan db:seed
+```
+
 ### How to use Google OAuth with Laravel Socialite?
 
 You can visit this article to learn how to use Google OAuth with Laravel Socialite
