@@ -81,7 +81,7 @@
         </div>
 
         <div class="action d-flex align-items-center justify-content-between pt-5 pb-3">
-            <h3 class="text-light">All Users</h3>
+            <h3 class="text-color">All Users</h3>
             <a href="#" class="d-flex align-items-center justify-content-center gap-2 text-decoration-none btn-primary rounded py-2 px-3" data-bs-toggle="modal" data-bs-target="#tambah-user-modal">
                 <i class='bx bx-plus text-light fs-5'></i>
                 <span class="text-light">Create user</span>
