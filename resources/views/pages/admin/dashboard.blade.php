@@ -178,6 +178,16 @@
                         </div>
                     </div>
                     <div class="modal-body">
+                        <figure class="profile d-flex flex-column justify-content-center align-items-center gap-3 mb-4">
+                            <div class="foto-profile">
+                                <img id="img-avatar-tambah" class="img img-avatar" src="{{ asset('assets/images/avatar.jpg') }}">
+                            </div>
+                        </figure>
+
+                        <label for="upload-foto-tambah" class="mt-3 mb-2">Upload Avatar (jpg, jpeg, png, and webp)</label>
+                        <input type="file" class="form-control upload-avatar" name="avatar"
+                            accept=".jpg, .jpeg, .png" id="upload-foto-tambah">
+
                         <label for="roles-tambah" class="mt-3">Roles</label>
                         <select id="roles-tambah" name="roles" class="form-select"
                             aria-label="Default select example">

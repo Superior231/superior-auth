@@ -24,16 +24,27 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
+            'avatar' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5048',
             'name' => 'required|string|max:20',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8',
             'roles' => 'required|string|in:admin,user',
         ]);
 
-        $validatedData['password'] = Hash::make($validatedData['password']);
-        $user = User::create($validatedData);
+        $user = new User();
+        if ($request->hasFile('avatar')) {
+            $file = $request->file('avatar');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->storeAs('avatars', $fileName, 'public');
+            $user->avatar = $fileName;
+        }
 
-        if ($user) {
+        $user->name = $validatedData['name'];
+        $user->email = $validatedData['email'];
+        $user->password = Hash::make($validatedData['password']);
+        $user->roles = $validatedData['roles'];
+
+        if ($user->save()) {
             return redirect()->back()->with('success', 'User created successfully!');
         } else {
             return redirect()->back()->with('error', 'User failed to create!');

@@ -47,18 +47,32 @@ try {
 
 // Image Preview
 const previewAvatar = document.getElementById('img-avatar');
+const previewAvatar2 = document.getElementById('img-avatar-tambah');
 const inputAvatar = document.getElementById('upload-foto');
+const inputAvatar2 = document.getElementById('upload-foto-tambah');
 
 try {
-    inputAvatar.onchange = (e) => {
-        if (inputAvatar.files && inputAvatar.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                previewAvatar.src = e.target.result;
-            };
-            reader.readAsDataURL(inputAvatar.files[0]);
-        }
-    };
+    if (previewAvatar || previewAvatar2) {
+        inputAvatar.onchange = (e) => {
+            if (inputAvatar.files && inputAvatar.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewAvatar.src = e.target.result;
+                };
+                reader.readAsDataURL(inputAvatar.files[0]);
+            }
+        };
+
+        inputAvatar2.onchange = (e) => {
+            if (inputAvatar2.files && inputAvatar2.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewAvatar2.src = e.target.result;
+                };
+                reader.readAsDataURL(inputAvatar2.files[0]);
+            }
+        };
+    }
 } catch (error) {
     console.log('Image preview not found!');
 }
