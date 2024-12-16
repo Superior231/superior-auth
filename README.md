@@ -1,19 +1,19 @@
 # Superior Auth
 
-**Superior Auth** adalah sistem registrasi penggua berbasis web yang memungkinkan pengguna untuk mendaftar, masuk, dan logout. Superior Auth memiliki dua metode autentikasi, yaitu melalui registrasi konvensional (menggunakan email dan password) dan autentikasi  menggunakan akun Google. Fitur ini dirancang untuk memberikan pengalaman pengguna yang lebih mudah dan fleksibel dalam proses autentikasi.
+**Superior Auth** is a web-based user registration system that allows users to register, login, and logout. Superior Auth has two authentication methods, namely conventional registration (using email and password) and authentication using a Google account. This feature is designed to provide a more convenient and flexible user experience in the authentication process.
 
-Fitur utama Superior Auth:
-1. Autentikasi standar (menggunakan email dan password).
-2. Autentikasi menggunakan akun Google.
+The main features of Superior Auth are:
+1. Standard authentication (using email and password).
+2. Authentication using a Google account.
 3. Logout
-4. Validasi data
-Validasi data pada saat login dan register seperti email atau password salah, email sudah digunakan, password tidak cocok, username terlalu panjang, dan pengecekan status user (approved atau banned). Jika user memiliki status banned maka user tidak bisa login.
-5. Personalisasi profil
-Pengguna dapat memperbarui informasi pribadi, termasuk mengganti avatar.
-6. Dashboard Admin
-Admin dapat mengelola akun pengguna seperti ubah avatar, username, email, password, dan banned user.
-7. Keamanan Login dan Middleware:
-Sistem dilengkapi dengan teknologi keamanan password hashing yang canggih, sehingga setiap data sensitif yang dimasukkan oleh pengguna terlindungi dengan baik. Selain itu, penggunaan middleware memastikan bahwa akses ke setiap halaman dalam aplikasi terbatas sesuai dengan peran dan hak akses pengguna. Dengan langkah-langkah keamanan ini, Superior Auth menjaga kerahasiaan data dan melindungi sistem dari potensi ancaman.
+4. Data validation
+Data validation during login and registration such as incorrect email or password, email already in use, mismatched password, username too long, and user status checking (approved or banned). If a user has a banned status, they cannot login.
+5. Profile personalization
+Users can update their personal information, including changing their avatar.
+6. Admin dashboard
+Admins can manage user accounts, including changing avatars, usernames, emails, passwords, and banning users.
+7. Login security and middleware:
+The system is equipped with advanced password hashing technology, which protects sensitive data entered by users. Additionally, the use of middleware ensures that access to each page in the application is limited according to the user's role and access rights. With these security measures, Superior Auth maintains data confidentiality and protects the system from potential threats.
 
 ## Requirements
 
@@ -78,7 +78,7 @@ php artisan migrate
 
 ### How to use Google OAuth with Laravel Socialite?
 
-Anda dapat mengunjungi artikel ini untuk mengetahui bagaimana cara menggunakan Google OAuth di Laravel Socialite
+You can visit this article to learn how to use Google OAuth with Laravel Socialite
 [Cara Membuat Login with Google Menggunakan Laravel Socialite di Laravel 11](https://blog.hikmal-falah.com/detail/cara-membuat-login-with-google-menggunakan-laravel-socialite-di-laravel-11)
 
 ## Usage
